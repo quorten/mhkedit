@@ -1,0 +1,39 @@
+The following picture explains how the pan cursor map is derived. Each
+square contains a set of information that corresponds to this key:
+	DIRECTION
+	GENERATED BINARY CODE (index of map array)
+	FINAL ARRAY INDEX (value of map array elements)
+
+The center square contains three such entries, and the last two
+numbers are separated by a comma and a space.
+
+NOTE: See MButtonScroll() in TextEdit.cpp for usage.
+
+	+----------------+----------------+----------------+
+	|up-left         |up              |up-right        |
+	|1010            |0010            |0110            |
+	|4               |0               |5               |
+	|                |                |                |
+	|                |                |                |
+	|                |                |                |
+	|                |                |                |
+	|                |                |                |
+	+----------------+----------------+----------------+
+	|left            |center-all      |right           |
+	|1000            |0000            |0100            |
+	|2               |10              |3               |
+	|                |center-vert     |                |
+	|                |0011            |                |
+	|                |8               |                |
+	|                |center-horz     |                |
+	|                |1100, 9         |                |
+	+----------------+----------------+----------------+
+	|down-left       |down            |down-right      |
+	|1001            |0001            |0101            |
+	|6               |1               |7               |
+	|                |                |                |
+	|                |                |                |
+	|                |                |                |
+	|                |                |                |
+	|                |                |                |
+	+----------------+----------------+----------------+
