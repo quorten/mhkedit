@@ -1,0 +1,10 @@
+ABOUTBOX DIALOGEX 0, 0, 188, 76
+CAPTION "About MhkEdit"
+STYLE WS_POPUP | WS_SYSMENU | WS_CAPTION | DS_MODALFRAME | DS_SHELLFONT
+FONT 8, "MS Shell Dlg"
+{
+	LTEXT "MhkEdit version 0.1", D_STATIC1, 40, 14, 81, 8
+	LTEXT "The source code and executable are in public domain.", D_STATIC2, 40, 22, 138, 16
+	ICON MAIN_ICON, D_ICON1, 8, 16, 16, 16
+	DEFPUSHBUTTON "OK", IDOK, 128, 52, 50, 14
+}
