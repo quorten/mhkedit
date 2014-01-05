@@ -1,0 +1,210 @@
+#include <windows.h>
+#include "resource.h"
+
+MAIN_ICON ICON "MhkEdit.ico"
+
+1 VERSIONINFO
+FILEVERSION		1,0,0,0
+PRODUCTVERSION	0,1,0,0
+FILEFLAGSMASK	VS_FF_DEBUG | VS_FF_PRERELEASE
+FILEFLAGS		VS_FF_DEBUG | VS_FF_PRERELEASE
+FILEOS			VOS__WINDOWS32
+FILETYPE		VFT_APP
+FILESUBTYPE		VFT2_UNKNOWN
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "040904E4"
+		{
+			//VALUE "Comments"
+			VALUE "CompanyName", "Ehtex Hyphle"
+			VALUE "FileDescription", "MhkEdit"
+			VALUE "FileVersion", "0.1.0.0"
+			VALUE "InternalName", "MhkEdit"
+			VALUE "LegalCopyright", "Public Domain"
+			//VALUE "LegalTrademarks"
+			VALUE "OriginalFilename", "mhkedit.exe"
+			VALUE "ProductName", "MhkEdit"
+			VALUE "ProductVersion", "0.1.0.0"
+		}
+	}
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x0409, 1252
+	}
+}
+
+// SPLASH_SCREEN BITMAP "splash.bmp"
+VERT_MARK ICON "vertmark.ico"
+HORZ_MARK ICON "horzmark.ico"
+CENT_MARK ICON "centmark.ico"
+U_ARROW CURSOR "up.cur"
+D_ARROW CURSOR "down.cur"
+L_ARROW CURSOR "left.cur"
+R_ARROW CURSOR "right.cur"
+UL_ARROW CURSOR "up-left.cur"
+UR_ARROW CURSOR "up-right.cur"
+DL_ARROW CURSOR "down-left.cur"
+DR_ARROW CURSOR "down-right.cur"
+V_ARROWS CURSOR "vertcenter.cur"
+H_ARROWS CURSOR "horzcenter.cur"
+CA_ARROWS CURSOR "center.cur"
+
+MAINMENU MENU
+{
+	POPUP "&File"
+	{
+		MENUITEM "&New\tCtrl+N", M_NEW
+		MENUITEM "&Open\tCtrl+O", M_OPEN
+		MENUITEM "&Save\tCtrl+S", M_SAVE
+		MENUITEM "Save &As...", M_SAVEAS
+		MENUITEM SEPARATOR
+		MENUITEM "&Print...", M_PRINT
+		MENUITEM "Print Pr&eview", M_PRINT_PREV
+		MENUITEM "Page Set&up", M_PAGE_SETUP
+		MENUITEM SEPARATOR
+		MENUITEM "Set &Game Mode...", M_GAME_MODE
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit\tAlt+F4", M_EXIT
+	}
+	POPUP "&Edit"
+	{
+		MENUITEM "&Undo\tCtrl+Z", M_UNDO
+		MENUITEM "R&edo\tCtrl+Y", M_REDO
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t\tCtrl+X", M_CUT
+		MENUITEM "&Copy\tCtrl+C", M_COPY
+		MENUITEM "&Paste\tCtrl+V", M_PASTE
+		MENUITEM "&Empty Clipboard", M_EMPTYCLIP
+		MENUITEM "&Delete\tDel", M_DELETE
+		MENUITEM "&Select All\tCtrl+A", M_SELECTALL
+		MENUITEM SEPARATOR
+		MENUITEM "&Find...\tCtrl+F", M_FIND
+		MENUITEM "Find &Next\tF3", M_FINDNEXT
+		MENUITEM "&Replace...\tCtrl+H", M_REPLACE
+	}
+	POPUP "&Resource"
+	{
+		MENUITEM "&New...", M_RSRC_NEW
+		MENUITEM "&Edit", M_RSRC_EDIT
+		MENUITEM "Edit &Raw", M_RSRC_ERAW
+		MENUITEM "&Save Changes", M_RSRC_SAVE
+		MENUITEM "Re&vert", M_RSRC_REVERT
+		MENUITEM "E&xport...\tCtrl+E", M_RSRC_EXPORT
+		MENUITEM "&Import...\tCTrl+I", M_RSRC_IMPORT
+	}
+	POPUP "&View"
+	{
+		MENUITEM "&Status Bar", M_STATBAR, CHECKED
+		MENUITEM "&Toolbar", M_TOOLBAR, CHECKED
+		MENUITEM "T&ree\tCtrl+K", M_TREE, CHECKED
+		MENUITEM "Resource &Parameters\tCtrl+R", M_RSRC_PARAMS, CHECKED
+		MENUITEM SEPARATOR
+		MENUITEM "Sp&lit", M_SPLIT
+		MENUITEM "F&ont...", M_FONT
+	}
+	POPUP "&Help"
+	{
+		MENUITEM "&Help Contents", M_HELP, HELP
+		MENUITEM "&About MhkEdit", M_ABOUT, HELP
+	}
+}
+
+ACCTABLE ACCELERATORS
+{
+	VK_F1, M_HELP, VIRTKEY
+	"N", M_NEW, VIRTKEY, CONTROL
+	"O", M_OPEN, VIRTKEY, CONTROL
+	"S", M_SAVE, VIRTKEY, CONTROL
+	VK_BACK, M_UNDO, VIRTKEY, ALT
+	"Z", M_UNDO, VIRTKEY, CONTROL
+	"Y", M_REDO, VIRTKEY, CONTROL
+	VK_DELETE, M_CUT, VIRTKEY, SHIFT
+	"X", M_CUT, VIRTKEY, CONTROL
+	VK_INSERT, M_COPY, VIRTKEY, CONTROL
+	"C", M_COPY, VIRTKEY, CONTROL
+	VK_INSERT, M_PASTE, VIRTKEY, SHIFT
+	"V", M_PASTE, VIRTKEY, CONTROL
+	"A", M_SELECTALL, VIRTKEY, CONTROL
+	"F", M_FIND, VIRTKEY, CONTROL
+	VK_F3, M_FINDNEXT, VIRTKEY
+	"H", M_REPLACE, VIRTKEY, CONTROL
+	"E", M_RSRC_EXPORT, VIRTKEY, CONTROL
+	"I", M_RSRC_IMPORT, VIRTKEY, CONTROL
+	"K", M_TREE, VIRTKEY, CONTROL
+	"R", M_RSRC_PARAMS, VIRTKEY, CONTROL
+	VK_TAB, K_SWITCHPANES, VIRTKEY, CONTROL
+	VK_TAB, K_SWITCHPANES_BACK, VIRTKEY, CONTROL, SHIFT
+}
+
+SHRTCMENUS MENU
+{
+	POPUP "Text Edit"
+	{
+		MENUITEM "&Undo", M_UNDO
+		MENUITEM "R&edo", M_REDO
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t", M_CUT
+		MENUITEM "&Copy", M_COPY
+		MENUITEM "&Paste", M_PASTE
+		MENUITEM "&Delete", M_DELETE
+		MENUITEM SEPARATOR
+		MENUITEM "&Select All", M_SELECTALL
+	}
+}
+
+STRINGTABLE
+{
+	M_NEW			"Creates a new file."
+	M_OPEN			"Opens an existing file."
+	M_SAVE			"Saves the active file."
+	M_SAVEAS		"Saves the active file with a new name."
+	M_PRINT			"Prints the active resource."
+	M_PRINT_PREV	"Displays full pages."
+	M_PAGE_SETUP	"Changes page layout settings."
+	M_GAME_MODE		"Configure tips and warnings for a specific game."
+	M_EXIT			"Exits the application."
+	M_UNDO			"Undoes the last edit operation."
+	M_REDO			"Redoes the last edit operation."
+	M_CUT			"Cuts the selection and puts it on the clipboard."
+	M_COPY			"Copies the selection and puts it on the clipboard."
+	M_PASTE			"Inserts the contents of the clipboard."
+	M_EMPTYCLIP		"Clears all contents from the clipboard."
+	M_DELETE		"Erases the selection."
+	M_SELECTALL		"Selects everything in the current data section."
+	M_FIND			"Finds the specified text in the current data section."
+	M_FINDNEXT		"Repeats the last find."
+	M_REPLACE		"Replaces specific text with different text."
+	M_RSRC_NEW		"Creates a new Mohawk resource."
+	M_RSRC_EDIT		"Enables edit mode for the current Mohawk resource."
+	M_RSRC_ERAW		"Enables raw binary edit mode for the current Mohawk resource."
+	M_RSRC_SAVE		"Saves changes to the current Mohawk resource."
+	M_RSRC_REVERT	"Discards unsaved changes to the current Mohawk resource."
+	M_RSRC_IMPORT	"Imports resource data from a file."
+	M_RSRC_EXPORT	"Exports resource data to a file."
+	M_STATBAR		"Shows or hides the status bar."
+	M_TOOLBAR		"Shows or hides the toolbar."
+	M_TREE			"Shows or hides the tree-view window."
+	M_RSRC_PARAMS	"Shows or hides the resource parameters window."
+	M_SPLIT			"Changes the position of a split between two panes."
+	M_FONT			"Changes the font used to display text in the data section."
+	M_HELP			"Displays help contents."
+	M_ABOUT			"Displays program information, version number, and copyright."
+	/* Toolbar strings */
+	T_NEW	"New"
+	T_OPEN	"Open"
+	T_SAVE	"Save"
+	T_PRINT "Print"
+	T_PRINTPRE "Print Preview"
+	T_CUT	"Cut"
+	T_COPY	"Copy"
+	T_PASTE	"Paste"
+	T_UNDO	"Undo"
+	T_REDO	"Redo"
+}
+
+#include "about.dlg"
+#include "rsrc_general.dlg"
+#include "rsrc_bitmap.dlg"
+#include "rsrc_sprite.dlg"
+#include "game_mode.dlg"
