@@ -1,0 +1,35 @@
+* Low-level paneling interface
+
+** Useful for emulating GTK+ HBox and VBoxes
+
+* Programmer-specified layout
+
+** Tool-bars, status bars, and other controls in fixed positions
+
+* Docking panels (rebar)
+
+** Any controls can be moved to any window location and even off of a
+   band.
+
+** Just reuse Microsoft's Common Controls implementation.  If
+   necessary, you can reimplement your own (for ReactOS).  Provide
+   example code to be used in conjunction with your library.
+
+Wait, wait, wait... rebar DOES NOT support dragging the bands off the
+bar!  Okay, I'll have to write my own library then for that, both of
+those, actually.
+
+Tables and other box layouts: rather than using a hierarchical
+structuring for the Panes, use "left", "right", "top", and "bottom"
+pointers.  Hierarchical structuring should be used for strict
+containment heirarchies, but this should be used for other uses.
+
+Most of all, make my stuff easy for other programmers to use!!!
+
+But how would hierarchy be specified?
+
+Okay, so you need to define such a containment structure at the top.
+However, adjacency pointers should also be kept for good measure.
+
+Possibly remove recursion from my algorithms to avoid problems of
+running out of stack space.
